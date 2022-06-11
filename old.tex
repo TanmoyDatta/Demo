@@ -1,0 +1,306 @@
+% FortySecondsCV LaTeX template
+% Copyright © 2019 René Wirnata <rene.wirnata@pandascience.net>
+% Licensed under the 3-Clause BSD License. See LICENSE file for details.
+%
+% Attributions
+% ------------
+% * fortysecondscv is based on the twentysecondcv class by Carmine Spagnuolo 
+%   (cspagnuolo@unisa.it), released under the MIT license and available under
+%   https://github.com/spagnuolocarmine/TwentySecondsCurriculumVitae-LaTex
+% * further attributions are indicated immediately before corresponding code
+
+
+%-------------------------------------------------------------------------------
+%                             ADDITIONAL PACKAGES
+%-------------------------------------------------------------------------------
+\documentclass[
+  a4paper, 
+%   showframes,
+%   maincolor=cvgreen,
+%   sectioncolor=red,
+%   subsectioncolor=orange
+%   sidebarwidth=0.4\paperwidth,
+%   topbottommargin=0.03\paperheight,
+%   leftrightmargin=20pt
+]{fortysecondscv}
+
+% improve word spacing and hyphenation
+\usepackage{microtype}
+\usepackage{ragged2e}
+
+% take care of proper font encoding
+\ifxetex
+	\usepackage{fontspec}
+	\defaultfontfeatures{Ligatures=TeX}
+% \newfontfamily\headingfont[Path = fonts/]{segoeuib.ttf} % local font
+\else
+	\usepackage[utf8]{inputenc}
+	\usepackage[T1]{fontenc}
+% \usepackage[sfdefault]{noto} % use noto google font
+\fi
+
+% enable mathematical syntax for some symbols like \varnothing
+\usepackage{amssymb}
+
+% bubble diagram configuration
+\usepackage{smartdiagram}
+\smartdiagramset{
+  % defaut font size is \large, so adjust to harmonize with sidebar layout
+  bubble center node font = \footnotesize,
+  bubble node font = \footnotesize,
+  % default: 4cm/2.5cm; make minimum diameter relative to sidebar size
+  bubble center node size = 0.4\sidebartextwidth,
+  bubble node size = 0.25\sidebartextwidth,
+  distance center/other bubbles = 1.5em,
+  % set center bubble color
+  bubble center node color = maincolor!70,
+  % define the list of colors usable in the diagram
+  set color list = {maincolor!10, maincolor!40,
+  maincolor!20, maincolor!60, maincolor!35},
+  % sets the opacity at which the bubbles are shown
+  bubble fill opacity = 0.8,
+}
+
+
+%-------------------------------------------------------------------------------
+%                            PERSONAL INFORMATION
+%-------------------------------------------------------------------------------
+% profile picture
+\cvprofilepic{pics/ani.jpg}
+% your name
+\cvname{Tanmoy Datta}
+
+
+% date of birth
+\cvbirthday{December 03, 1997}
+% short address/location, use \newline if more than 1 line is required
+\cvaddress{Tasnim Niketon(148/6/A),Mirpur-1}
+% phone number
+\cvphone{01716948523}
+% email address
+\cvmail{tonmoydatta45@gmail.com}
+% add additional information
+
+
+% \newcommand{\additional}{some more?}
+
+
+%-------------------------------------------------------------------------------
+%                              SIDEBAR 1st PAGE
+%-------------------------------------------------------------------------------
+% overwrite default icons and order of personal information
+% \renewcommand{\personaltable}{%
+% 	\begin{personal}[0.8em]
+% 		\circleicon{\faKey}      & \cvkey  \\
+% 		\circleicon{\faAt}       & \cvmail \\
+% 		\circleicon{\faGlobe}    & \cvsite \\
+% 		\circleicon{\faPhone}    & \cvphone \\
+% 		\circleicon{\faEnvelope} & \cvaddress \\
+% 		\circleicon{\faInfo}     & \cvbirthday \\
+% 		% add another line
+% 		\circleicon{\faQuestion} & \additional
+% 	\end{personal}
+% }
+
+% add more profile sections to sidebar on first page
+	\vspace{1 cm}
+\addtofrontsidebar{
+	% include gosquare national flags from https://github.com/gosquared/flags;
+	% naming according to ISO 3166-1 alpha-2 country codes
+	\graphicspath{{pics/flags/}}
+	\vspace{1 cm}
+	\profilesection{Languages}
+		\pointskill{\flag{India.png}}{Bengali}{5}
+		\pointskill{\flag{GB.png}}{English}{4}
+ 
+  	
+  		% social network accounts incl. proper hyperlinks
+  		
+  			\vspace{1 cm}
+	\profilesection{Social Network}
+		\begin{icontable}{2.5em}{1em}
+		% title/career
+			\cvlinkedin{/in/maher-moussa-246a76b3/}
+	\vspace{2 cm}
+
+
+	\chartlabel{Wheel Chart}
+
+	\wheelchart{3.7em}{2em}{%
+	20/3em/maincolor!50/Chill,
+	15/3em/maincolor!15/Play,
+	30/4em/maincolor!40/Sleep,
+	20/3em/maincolor!20/Eat
+	}
+	
+		\end{icontable}
+
+	
+
+	
+		
+}
+
+
+%-------------------------------------------------------------------------------
+%                              SIDEBAR 2nd PAGE
+%-------------------------------------------------------------------------------
+\addtobacksidebar{
+	\vspace{1 cm}
+
+	\profilesection{Soft Skills}
+		
+ 			\barskill{\faSitemap}{Team building}{90}
+	\barskill{\faTasks}{Project implementation}{70}
+	\barskill{\faEnvelope}{Communication}{90}
+	\barskill{\faInfo}{Flexibility}{100}
+	
+		\pointskill{\faComment}{Motivated and Energetic}{5}
+ 			\skill[1.8em]{\faCompress}{Eager to learn}
+ 			\skill[1.8em]{\faCompress}{Adjusts with work environment}
+ 			\skill[1.8em]{\faCompress}{Maintains professional attitude}
+	
+	
+	\vspace{2 cm}
+	
+		\chartlabel{\textit{Interests}}
+
+	\wheelchart{3.7em}{2em}{%
+	20/3em/maincolor!50/New Tech,
+	15/3em/maincolor!15/ML,
+	30/4em/maincolor!40/Spors,
+	20/3em/maincolor!20/Blogging
+	}
+	
+}
+
+
+%-------------------------------------------------------------------------------
+%                         TABLE ENTRIES RIGHT COLUMN
+%-------------------------------------------------------------------------------
+\begin{document}
+
+\makefrontsidebar
+
+\vspace{2 cm}
+
+\cvsection{About me}
+An enthusiastic fresher with highly motivated and leadership skills having a bachelor of engineering degree in Computer Science and Engineering. Love to learn new topics and desire to implement those in the real world from the book. In order to make the world a better place, I strive to be a person of value to my family and society.
+
+\vspace{0.5 cm}
+
+
+\cvsection{Education}
+
+\begin{cvtable}
+	\cvitem{2017 -- 2021}{Bachelor of Engineering}{Daffodil International University}
+		{Department: Computer Science and Engineering.
+ \\ Current CGPA: 3.49 Out of 4.00 \\}
+\end{cvtable}
+
+\begin{cvtable}
+	\cvitem{2014 -- 2016}{Higher Secondary Certificate}{Sirajganj Collectorate College,Sirajganj}
+		{Department: Science.
+ \\ Current CGPA: 4.08 Out of 5.00 \\}
+\end{cvtable}
+
+\begin{cvtable}
+	\cvitem{2013 -- 2014}{Secondary School Certificate}{Dadpur Shahebganj B.L High School}
+		{Department: Science.
+ \\ Current CGPA: 4.13 Out of 5.00 \\}
+\end{cvtable}
+
+
+\cvsection{Projects - Working Experience}
+\begin{cvtable}[3]
+	\cvitem{Summer-2021}{BoiGhor}{Web}{Me and my team working on this e-commerce website through which
+anyone can buy books from our site.}
+	\cvitem{Summer-2020}{Kid’s Alphabet}{Android}{
+	Me and my team created An android application for “ kid’s Alphabet”
+through this app, young children will be able to read, listen and teach the
+Alphabet.}
+	\cvitem{Fall-2019}{Beauty Parlour Management System}{Web}{Me and my team created an web application Beauty Parlour Management
+System is essentially a web-based application. The users of the system
+include the customers where they can register initially.}
+	\cvitem{Spring-2018 }{Kazi Nazrul Islam Entire Eassy.}{Android}{
+	I’m working on this created An android application here Nazrul's short
+stories, poems, music, novels, Nazrul plays, and essays.}
+
+\end{cvtable}
+
+
+\cvsection{Skills}
+
+\begin{cvtable}
+	\cvitem{Intermediate}{Java Programming Language}{}{OOP}\\
+
+	\cvitem{Intermediate}{Database Management System}{}{mysql}\\
+
+		\cvitem{Medium}{Development}{}{Android Development}
+		
+			\cvitem{Medium}{Web Development}{}{html,CSS3}
+\end{cvtable}
+
+\vspace{1 cm}
+
+
+
+\newpage
+\makebacksidebar
+\vspace{1 cm}
+
+\vspace{3 cm}
+
+\cvsection{Soft skill set}
+\begin{cvtable}
+	\cvitemshort{\textbf{MS Office}}{Expertise in MS Powerpoint, MS Word,MS Excel}
+	\cvitemshort{}{}
+	\cvitemshort{\textbf{Report Writing}}{Professional report using MS Word, Google Doc}
+	\cvitemshort{}{}
+	\cvitemshort{\textbf{Stay Connected}}{Social and professional networking across various platforms}
+\end{cvtable}
+
+
+\cvsection{Extra-Curricular Activities}
+\begin{cvtable}
+\cvitemshort{Programming Contest}{Take Off Programming contest on Summer 2018}
+	\cvitemshort{}{}
+	\cvitemshort{Chess Contest}{Participated Like to attend chess contest}
+	\cvitemshort{}{}
+	\cvitemshort{Quiz}{Participated and acclaimed winner position in various competitions}
+	\cvitemshort{}{}
+	\cvitemshort{Games and sports}{Football, Cricket}
+\end{cvtable}
+
+
+
+
+	\cvsection{Personal Information}
+
+\begin{cvtable}
+\cvitem{Full Name :}{Tanmoy Kumar Datta}{}{}
+	\cvitem{Father Name :}{Sudhangshu Chandra Datta}{}{}
+	\cvitem{Mother name :}{Bithika Rani Datta}{}{}
+	\cvitem{Matrital Status :}{Unmarried}{}{}
+	\cvitem{Blood Group :}{A+}{}{}
+	\cvitem{Permanent Address :}{Sahebganj,RAiganj,Sirajganj}{}{}
+	
+\end{cvtable}
+
+
+\cvsection{Reference}
+\begin{cvtable}
+	\cvitem{Name :}{Mr.Abdus Sattar}{}{}
+	\cvitem{Designation :}{Assistant Professor Coordinator M.Sc. at DIU}{}{}
+	\cvitem{Dept :}{Department of Computer Science and Engineering}{}{}
+	\cvitem{E-Mail :}{abdus.cse@diu.edu.bd}{}{}
+	\cvitem{Phone :}{01818392800}{}{}
+
+	
+\end{cvtable}
+
+
+
+\cvsignature
+
+\end{document} 
